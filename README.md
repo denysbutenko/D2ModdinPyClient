@@ -1,57 +1,26 @@
 # D2ModdinPyClient
 
 Crossplatform equivalence to https://github.com/kidovate/D2ModdinClient
+shitty fork by Eryla, only linux use in mind. shit might be broken for windows/osx
 
-[![Build Status](https://travis-ci.org/BloodyD/D2ModdinPyClient.svg)](https://travis-ci.org/BloodyD/D2ModdinPyClient)
+[![Build Status](https://travis-ci.org/Eryla/D2ModdinPyClient.svg)](https://travis-ci.org/Eryla/D2ModdinPyClient)
 
-## Tested with:
-  - python 2.7
-  - PyQt 4.8
-
-## How to start develop
-
-### Clone and install dependecies
-``` 
-cd ~
-git clone https://github.com/BloodyD/D2ModdinPyClient.git d2modd
-cd d2modd
-chmod +x install_deps.sh install_sip.sh install_pyqt.sh
-./install_deps.sh
-virtualenv .
-source bin/activate
-pip install -r requirements.txt
-./install_sip.sh
-./install_pyqt.sh
-
+### Test Environment:
 ```
+Arch Linux x86_64
+Native Steam Client/Dota
 
-### Run tests
-```
-cd ~/d2modd/tests
-python runner.py
+python 2.7.8
+pyqt4-common (4.11.1-1)
+python2-pyqt4 (4.11.1-1)
+
+websocket==0.2.1
+websocket-client==0.15.0
+mock==1.0.1
 ```
 
 ### Run client
 ```
-cd ~/d2modd/src
-python main.py
+cd ~/D2ModdinPyClient/src
+python main.py or python2 main.py
 ```
-
-
-
-## How to deploy
-
-### Windows
-```
-cd ~/d2modd/src
-pyinstaller windows.spec
-```
-binaries are located in `~/d2modd/src/dist/d2mpclient/`
-
-### Linux
-
-
-### Mac
-
-
-
