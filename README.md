@@ -1,7 +1,10 @@
 # D2ModdinPyClient
 
-Crossplatform equivalence to https://github.com/kidovate/D2ModdinClient
-shitty fork by Eryla, only linux use in mind. shit might be broken for windows/osx
+"Crossplatform" equivalence to https://github.com/kidovate/D2ModdinClient
+
+shitty fork, only linux use in mind.
+
+shit might be broken for windows/osx
 
 ### Test Environment:
 ```
@@ -21,11 +24,10 @@ python2-pyqt4 (4.11.1-1)
 
 websocket==0.2.1
 websocket-client==0.15.0
-mock==1.0.1
 ```
 
 ### Run client
 ```
-cd ~/D2ModdinPyClient/src
+cd ~/D2ModdinPyClient
 python main.py or python2 main.py
 ```
