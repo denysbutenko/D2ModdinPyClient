@@ -12,9 +12,7 @@ def command(cmd):
     if sys.platform == "darwin":
         return call(["open", ModManager().steam_exe(), "steam://%s" %cmd])
     else:
-        #return call([ModManager().steam_exe(), "steam://%s" %cmd])
         return call(["steam", "steam://%s" %cmd])
-        #call(["steam", "steam://
 
 def launch_dota():
     if is_dota_running(): return
