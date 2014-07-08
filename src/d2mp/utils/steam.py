@@ -12,13 +12,15 @@ def command(cmd):
     if sys.platform == "darwin":
         return call(["open", ModManager().steam_exe(), "steam://%s" %cmd])
     else:
-        return call([ModManager().steam_exe(), "steam://%s" %cmd])
-#    return QDesktopServices.openUrl(QUrl("steam://%s" %(cmd)))
+        #return call([ModManager().steam_exe(), "steam://%s" %cmd])
+        return call(["steam", "steam://%s" %cmd])
+        #call(["steam", "steam://
 
 def launch_dota():
     if is_dota_running(): return
+    print "launching dota"
     log.DEBUG("Launching dota")
-    return command("run/570")
+    return command("rungameid/570")
 
 def get_dota_process():
     for proc in psutil.process_iter():
@@ -34,8 +36,9 @@ def kill_dota():
     if dota_proc is not None: dota_proc.kill()
     
 def connect_dota(ip):
+    print "connecting to " + ip 
     log.DEBUG("Told Steam to connect to %s." %(ip))
-    command("connect/%s" %(ip))
+    command("connect/%s/" %(ip))
 
 
 def spectate(ip):

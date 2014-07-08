@@ -117,28 +117,30 @@ class SingleApplication(QApplication):
         return super(SingleApplication, self).exit()
     
     def show_mod_list(self):
+        print "mod list: " + ModManager().mod_names_as_string()
         self.show_message("Mod List", ModManager().mod_names_as_string())
     
     def show_message_from_socket(self, message):
-        self.show_message("Server message", message)
+        print "status: " + message
         
     def show_error_from_socket(self, message):
-        self.show_message("Server error", message, QSystemTrayIcon.Critical)
+        print "status: " + message
         
     def show_message_from_mod_manager(self, message):
-        self.show_message("ModManager message", message)
+        print message
         
     def show_error_from_mod_manager(self, message):
-        self.show_message("ModManager error", message, QSystemTrayIcon.Critical)
-        
+        print "status: " + message
+
     def show_message(self, title, message, icon = QSystemTrayIcon.Information):
-        self.tray.showMessage(title, message, icon)
+        print message
 
 if __name__ == '__main__':
     app = SingleApplication(sys.argv)  
     app.setQuitOnLastWindowClosed(False);
 
     if app.is_running():
+        print "d2mp is already running!" #seriously, shouting that in the log isn't enough.
         log.DEBUG("[main] d2mp is already running!")
     else:
         QCoreApplication.setOrganizationName("D2Modd");
